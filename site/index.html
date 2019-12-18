@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+<style>
+.slidecontainer {
+  width: 95%;
+  margin: auto;
+}
+.slidcont{
+  margin: 0;
+  width: 80%;
+  display: inline-block;
+}
+
+body{
+  background-color: rgb(200,200,200);
+  margin: 10px;
+  font-family: 'Adventure Time Logo Regular';
+  color: #fff44f;
+  text-shadow: 3px 2px black
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 125px;
+  border-radius: 25px;
+  background: rgb(200,200,200);
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-bottom: 15px solid #FDC60A;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 52px;
+  height: 125px;
+  border: 0;
+  background: url("slider.png");
+  cursor: pointer;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
+.slider::-moz-range-thumb {
+  width: 40px;
+  height: 105px;
+  border: 0;
+  background: url("slider.png");
+  cursor: pointer;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
+.header{
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  width: 80%;
+}
+h1{
+  align: center;
+  font-size: 45px;
+}
+
+@font-face {
+font-family: 'Adventure Time Logo Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Adventure Time Logo Regular'), url('Adventure Time Logo.woff') format('woff');
+}
+
+#top, #bottom, #left, #right {
+	background: url("at_bmo.png");
+  background-size: 40px 40px;
+  background-repeat: repeat;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 40px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 40px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+
+img{
+  height: auto;
+  margin: 0;
+}
+#good{
+  display: inline-block;
+  width: 9%;
+  height: 70%
+}
+#bad{
+  display: inline-block;
+  width: 9%;
+}
+
+.footer{
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background: rgb(200,200,200);
+}
+
+#moodreq{
+  margin: auto;
+  width: 200px;
+  font-family: 'Adventure Time Logo Regular';
+  font-size: 40px;
+  background: #77dd77;
+  border-radius: 15px;
+  color: #fff44f;
+}
+#mood{
+  margin: auto;
+  margin-top: 25px;
+  width: 200px;
+}
+
+#loadimg{
+  margin: auto;
+  margin-top: 25px;
+  width: 80%;
+  display: none;
+}
+
+#moodshow{
+  width: 100%;
+  border: solid 15pt;
+  border-radius: 15px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header"><h1 align="center">How are you feeling today?<br>Feel free to grab Lemongrab</h1></div>
+
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+
+<div class="slidecontainer">
+  <img src="good.png" id="good">
+  <div class="slidcont"> <input type="range" min="1" max="99" value="50" class="slider" id="myRange"></div>
+  <img src="bad.png" id="bad">
+</div>
+
+<div id="mood">
+  <button id="moodreq">Push<br>to see</button>
+</div>
+
+<div id="loadimg">
+    <img id="moodshow" src="pics/lvl1.gif">
+</div>
+
+<div class="footer">
+  <audio controls id="unacceptable">
+      <source src="sound.mp3" type="audio/mpeg">
+  </audio> </div>
+<script src="main.js"></script>
+
+</body>
+</html>
